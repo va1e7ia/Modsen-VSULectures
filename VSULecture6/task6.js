@@ -1,22 +1,22 @@
 let forbiddenWords =  ['spam', 'advertisement', 'scam'];
 const message = "This is a spam message";
 
-const checkForbiddenWords = (message, word) =>{
+//some
+const includesForbiddenWords = forbiddenWords.some(word => message.includes(word));
 
-    for(let i=0; i<word.length; i++){
-        if(message.includes(word[i])){
-            return true;
-        }
-    }
+//map
+const mapForbiddenWords = forbiddenWords.map(word => message.includes(word)).includes(true);
 
-    return false;
-}
+console.log(includesForbiddenWords);
 
-console.log(checkForbiddenWords(message, forbiddenWords));
+console.log(mapForbiddenWords);
 
 forbiddenWords.shift();
 
 console.log(forbiddenWords);
+
+
+
 
 // Ситуация: Вы разрабатываете систему фильтрации сообщений, и вам нужно проверить, содержит ли сообщение какое-либо из запрещённых слов.​
 // Условия:​ Создайте массив forbiddenWords, который будет содержать запрещённые слова: ['spam', 'advertisement', 'scam'].​

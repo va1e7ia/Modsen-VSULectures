@@ -1,8 +1,6 @@
 const names = ['alice', 'bob', 'charlie', 'david'];
 
-const upperCaseName = names.map(name=>{
-    return name[0].toUpperCase()+name.slice(1);
-})
+const upperCaseName = names.map(name => name.toUpperCase()+name.slice(1));
 
 console.log(upperCaseName);
 

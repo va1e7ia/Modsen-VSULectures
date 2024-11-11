@@ -1,6 +1,8 @@
-const numbers = [5, 3, 8, 1, 4];
+const numbers = [5, 3, 8, 1, 4, 11];
 
-console.log(numbers.sort());
+numbers.sort((a,b) => a-b);
+
+console.log(numbers);
 
 // Ситуация: У вас есть массив чисел, и вам нужно отсортировать его в порядке возрастания.​
 // Условия:​
