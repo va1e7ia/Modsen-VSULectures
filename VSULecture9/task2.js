@@ -1,5 +1,5 @@
-function filterEvens(...args) {
-  return args.filter((el) => el % 2 === 0);
+function filterEvens() {
+  return [...arguments].filter((el) => el % 2 === 0);
 }
 
 console.log(filterEvens(1, 2, 3, 4, 5, 6, 7, 8, 9));
