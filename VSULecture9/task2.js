@@ -1,7 +1,5 @@
-function filterEvens() {
-  let filteredNums = Array.from(arguments).filter((el) => el % 2 === 0);
-
-  return filteredNums;
+function filterEvens(...args) {
+  return args.filter((el) => el % 2 === 0);
 }
 
 console.log(filterEvens(1, 2, 3, 4, 5, 6, 7, 8, 9));
