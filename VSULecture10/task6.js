@@ -1,8 +1,7 @@
 (function () {
-  const randNums = [];
-  for (let i = 0; i < 5; i++) {
-    randNums.push(Math.floor(Math.random() * 20));
-  }
+  const randNums = new Array(5)
+    .fill(0)
+    .map(() => Math.floor(Math.random() * 20));
 
   const min = Math.min(...randNums);
   const max = Math.max(...randNums);
