@@ -24,29 +24,32 @@ Pet.compareAges = function (pet1, pet2) {
 function Dog(name, age, breed) {
   Pet.call(this, name, age);
   this.breed = breed;
-  this.describe = function () {
-    return `Name: ${this.name}, age: ${this.age}, breed: ${this.breed}`;
-  };
-  this.bark = function () {
-    return `${this.name} is barking!`;
-  };
-  this.fetch = function (item) {
-    return `${this.name} fetch ${item}`;
-  };
 }
 
-function GuardDog(name, age, breed, trainingLevel) {
-  Dog.call(this, name, age, breed);
-  this.trainingLevel = trainingLevel;
-  this.guard = function () {
-    return `${this.name} guards territory at the ${this.trainingLevel} level`;
-  };
-  if (trainingLevel > 5) {
-    this.bark = function () {
-      return `${this.name} is barking loud!`;
-    };
-  }
-}
+Dog.prototype.describe = function () {
+  return `Name: ${this.name}, age: ${this.age}, breed: ${this.breed}`;
+};
+
+Dog.prototype.bark = function () {
+  return `${this.name} is barking!`;
+};
+
+Dog.prototype.fetch = function (item) {
+  return `${this.name} fetches ${item}.`;
+};
+
+// function GuardDog(name, age, breed, trainingLevel) {
+//   Dog.call(this, name, age, breed);
+//   this.trainingLevel = trainingLevel;
+//   this.guard = function () {
+//     return `${this.name} guards territory at the ${this.trainingLevel} level`;
+//   };
+//   if (trainingLevel > 5) {
+//     this.bark = function () {
+//       return `${this.name} is barking loud!`;
+//     };
+//   }
+// }
 
 const cat = new Pet("Luna", 2);
 console.log(cat.name);
@@ -67,17 +70,17 @@ console.log(dog.fetch("toy"));
 
 console.log("*****************************************");
 
-const guardDog = new GuardDog("Muhtar", 11, "Terrier", 6);
-console.log(guardDog.name);
-console.log(guardDog.age);
-console.log(guardDog.breed);
-console.log(guardDog.trainingLevel);
-console.log(guardDog.describe());
-console.log("Old?: " + guardDog.isOld());
-console.log(guardDog.bark());
-console.log(guardDog.guard());
-console.log(guardDog.fetch("bone"));
+// const guardDog = new GuardDog("Muhtar", 11, "Terrier", 6);
+// console.log(guardDog.name);
+// console.log(guardDog.age);
+// console.log(guardDog.breed);
+// console.log(guardDog.trainingLevel);
+// console.log(guardDog.describe());
+// console.log("Old?: " + guardDog.isOld());
+// console.log(guardDog.bark());
+// console.log(guardDog.guard());
+// console.log(guardDog.fetch("bone"));
 
 console.log("*****************************************");
 
-console.log(Pet.compareAges(dog, guardDog));
+// console.log(Pet.compareAges(dog, guardDog));
